@@ -11,7 +11,7 @@ Pod::Spec.new do |s|
   # ―――  Spec Metadata  ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
 
   s.name         = "ZTExtension"
-  s.version      = "1.0.0"
+  s.version      = "1.0.1"
   s.summary      = "Swift开发中常用的一些Extension "
 
   # This description is used to generate tags and improve search results.
@@ -74,7 +74,7 @@ Pod::Spec.new do |s|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  s.source       = { :git => "https://github.com/ShangZhengtao/ZTExtension.git", :tag => "1.0.0" }
+  s.source       = { :git => "https://github.com/ShangZhengtao/ZTExtension.git", :tag => "1.0.1" }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
