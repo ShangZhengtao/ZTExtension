@@ -25,8 +25,11 @@ Pod::Spec.new do |s|
   #   * Write the description between the DESC delimiters below.
   #   * Finally, don't worry about the indent, CocoaPods strips it!
   s.description  = <<-DESC
+
+        Swift开发中常用的一些Extension
+        
                    DESC 
-                   Swift开发中常用的一些Extension
+                   
 
   s.homepage     = "https://github.com/ShangZhengtao/ZTExtension.git"
   # s.screenshots  = "www.example.com/screenshots_1.gif", "www.example.com/screenshots_2.gif"
