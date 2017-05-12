@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "ZTExtension"
-  s.version      = "0.0.1"
+  s.version      = "v1.0"
   s.summary      = "Swift开发中常用的一些Extension "
 
   # This description is used to generate tags and improve search results.
