@@ -197,10 +197,8 @@ extension UIButton {
         guard text != nil else {
             return
         }
-        //        let font = self.titleLabel?.font ?? UIFont.systemFont(ofSize: 12)
+    
         let margin = spacing
-        //        var labelW = NSString.init(string: text!).size(attributes: [NSFontAttributeName: font]).height
-        //        var labelH = NSString.init(string: text!).size(attributes: [NSFontAttributeName: font]).width
         let labelW = self.titleLabel?.bounds.size.width ?? 0
         let labelH = self.titleLabel?.bounds.size.height ?? 0
         let imageOffsetX = labelW * 0.5
