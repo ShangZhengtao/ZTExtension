@@ -107,27 +107,73 @@ extension UIButton {
     /// - Parameters:
     ///   - duration: 总时间
     ///   - normalTitle: 标题
-    ///   - waitTitle: s 每秒变化一次
-    func startCountDown( _ duration: Int,
-                         _ normalTitle: String,
-                         _ waitTitle: String) {
+    ///   - waitTitle: s 每秒变化一次 ss
+    func startCountDown( _ duration: Int = 60,
+                         _ normalTitle: String = "获取验证码",
+                         _ waitTitle: String = "s") {
+        //        let color = self.backgroundColor
+        //        var timeout = duration
+        //        if #available(iOS 10.0, *)  {
+        //            Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { ( timer: Timer) in
+        //                if timeout <= 0 {
+        //                    timer.invalidate()
+        //                    self.setTitle(normalTitle, for: .normal)
+        //                    self.isEnabled = true
+        //                    self.backgroundColor = color
+        //                }else{
+        //                    self .setTitle("\(timeout)\(waitTitle)", for: .disabled)
+        //                    self.isEnabled = false
+        //                    self.backgroundColor = UIColor.gray
+        //                    self.setTitleColor(UIColor.white, for: .disabled)
+        //                    timeout = timeout - 1
+        //                }
+        //            }
+        //        } else {
+        self.duration = duration
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(countDown(timer:)), userInfo: ["duration": duration, "normalTitle": normalTitle, "waitTitle": waitTitle], repeats: true)
+        //                   }
+    }
+    
+    @objc private func countDown (timer: Timer) {
         let color = self.backgroundColor
-        var timeout = duration
-        Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { ( timer: Timer) in
-            if timeout <= 0 {
-                timer.invalidate()
-                self.setTitle(normalTitle, for: .normal)
-                self.isEnabled = true
-                self.backgroundColor = color
-            }else{
-                self .setTitle("\(timeout)\(waitTitle)", for: .disabled)
-                self.isEnabled = false
-                self.backgroundColor = UIColor.gray
-                self.setTitleColor(UIColor.white, for: .disabled)
-                timeout = timeout - 1
-            }
+        let userInfo: [String : Any] = timer.userInfo as! [String : Any]
+        let normalTitle: String = userInfo["normalTitle"] as! String
+        let waitTitle = userInfo["waitTitle"] as! String
+        
+        if duration <= 0 {
+            timer.invalidate()
+            self.setTitle(normalTitle, for: .normal)
+            self.isEnabled = true
+            self.backgroundColor = color
+        }else{
+            self .setTitle("\(duration)\(waitTitle)", for: .disabled)
+            self.isEnabled = false
+            self.backgroundColor = UIColor.gray
+            self.setTitleColor(UIColor.white, for: .disabled)
+            duration = duration - 1
         }
     }
+    
+    private static var timerkey: Void?
+    private var timer: Timer? {
+        set {
+            objc_setAssociatedObject(self, &UIButton.timerkey, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+        }
+        get {
+            return  objc_getAssociatedObject(self, &UIButton.timerkey) as? Timer
+        }
+    }
+    private static var durationkey: Void?
+    private  var duration: Int {
+        set {
+            objc_setAssociatedObject(self, &UIButton.durationkey, newValue, .OBJC_ASSOCIATION_RETAIN)
+        }
+        get {
+            
+            return objc_getAssociatedObject(self, &UIButton.durationkey) as! Int
+        }
+    }
+    
 }
 
 extension UIButton {
@@ -238,9 +284,9 @@ extension UIButton {
     private static var isWaitkey: Void?
     var isWait: Bool {
         get {
-           return (objc_getAssociatedObject(self, &UIButton.isWaitkey) as?
-            Bool) ?? false
-    
+            return (objc_getAssociatedObject(self, &UIButton.isWaitkey) as?
+                Bool) ?? false
+            
         }
         set (newValue){
             objc_setAssociatedObject(self, &UIButton.isWaitkey, newValue, .OBJC_ASSOCIATION_ASSIGN)

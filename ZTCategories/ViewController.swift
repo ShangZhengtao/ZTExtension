@@ -27,11 +27,13 @@ class ViewController: UIViewController {
     
     @IBAction func touchButton(_ sender: UIButton) {
         print("touch")
-//        sender.startCountDown(5, "获取验证码", "s")
-        testButton.showIndicator(title: "支付中..");
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2) { 
-            self.testButton.hiddenIndicator()
-        }
+        sender.startCountDown(5, "获取验证码", "s")
+        
+        //sss test 
+//        testButton.showIndicator(title: "支付中..");
+//        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2) { 
+//            self.testButton.hiddenIndicator()
+//        }
     }
 
 }
