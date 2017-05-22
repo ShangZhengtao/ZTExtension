@@ -31,7 +31,7 @@ extension UIButton {
             return objc_getAssociatedObject(self, &(UIButton.touchExtendInsetKey)) as! UIEdgeInsets
         }
         set (newValue){
-            objc_setAssociatedObject(self, &(UIButton.touchExtendInsetKey), newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+            objc_setAssociatedObject(self, &(UIButton.touchExtendInsetKey), newValue, .OBJC_ASSOCIATION_COPY_NONATOMIC)
         }
     }
     
@@ -111,27 +111,10 @@ extension UIButton {
     func startCountDown( _ duration: Int = 60,
                          _ normalTitle: String = "获取验证码",
                          _ waitTitle: String = "s") {
-        //        let color = self.backgroundColor
-        //        var timeout = duration
-        //        if #available(iOS 10.0, *)  {
-        //            Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { ( timer: Timer) in
-        //                if timeout <= 0 {
-        //                    timer.invalidate()
-        //                    self.setTitle(normalTitle, for: .normal)
-        //                    self.isEnabled = true
-        //                    self.backgroundColor = color
-        //                }else{
-        //                    self .setTitle("\(timeout)\(waitTitle)", for: .disabled)
-        //                    self.isEnabled = false
-        //                    self.backgroundColor = UIColor.gray
-        //                    self.setTitleColor(UIColor.white, for: .disabled)
-        //                    timeout = timeout - 1
-        //                }
-        //            }
-        //        } else {
+ 
         self.duration = duration
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(countDown(timer:)), userInfo: ["duration": duration, "normalTitle": normalTitle, "waitTitle": waitTitle], repeats: true)
-        //                   }
+        
     }
     
     @objc private func countDown (timer: Timer) {
