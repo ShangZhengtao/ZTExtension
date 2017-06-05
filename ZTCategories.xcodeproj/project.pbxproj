@@ -16,6 +16,7 @@
 		189147C31EC5494E00667A05 /* UIImage+ZTExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189147C21EC5494E00667A05 /* UIImage+ZTExtension.swift */; };
 		189147C51EC5597500667A05 /* NSObject+ZTExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189147C41EC5597500667A05 /* NSObject+ZTExtension.swift */; };
 		189147C71EC5677100667A05 /* UITextView+ZTExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189147C61EC5677100667A05 /* UITextView+ZTExtension.swift */; };
+		18A477B61ED2ED6900577257 /* UIView+ZTExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A477B51ED2ED6900577257 /* UIView+ZTExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		189147C21EC5494E00667A05 /* UIImage+ZTExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+ZTExtension.swift"; sourceTree = "<group>"; };
 		189147C41EC5597500667A05 /* NSObject+ZTExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSObject+ZTExtension.swift"; sourceTree = "<group>"; };
 		189147C61EC5677100667A05 /* UITextView+ZTExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITextView+ZTExtension.swift"; sourceTree = "<group>"; };
+		18A477B51ED2ED6900577257 /* UIView+ZTExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+ZTExtension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +82,7 @@
 				189147C61EC5677100667A05 /* UITextView+ZTExtension.swift */,
 				189147C21EC5494E00667A05 /* UIImage+ZTExtension.swift */,
 				189147C41EC5597500667A05 /* NSObject+ZTExtension.swift */,
+				18A477B51ED2ED6900577257 /* UIView+ZTExtension.swift */,
 			);
 			name = Categories;
 			path = ZTCategories/Categories;
@@ -163,6 +166,7 @@
 				182E0ECC1EC3F63F00E091CD /* AppDelegate.swift in Sources */,
 				189147C31EC5494E00667A05 /* UIImage+ZTExtension.swift in Sources */,
 				189147C71EC5677100667A05 /* UITextView+ZTExtension.swift in Sources */,
+				18A477B61ED2ED6900577257 /* UIView+ZTExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

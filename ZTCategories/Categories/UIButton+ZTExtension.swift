@@ -50,6 +50,7 @@ extension UIButton {
     }
     
     dynamic  override open class func initialize() {
+        super.initialize()
         swizzle(targetClass: self, orig: #selector(point(inside:with:)), new: #selector(myPointInside(_:_:)))
         
     }
